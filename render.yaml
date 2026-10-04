@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+# Review the paid compute plan before creating resources.
+# Existing provider values must be supplied privately by the service owners.
+services:
+  - type: web
+    name: dhyaan-mcp
+    runtime: docker
+    plan: 0.5c-512mb
+    numInstances: 1
+    dockerfilePath: ./dhyaan_mcp/Dockerfile
+    dockerContext: ./dhyaan_mcp
+    autoDeployTrigger: 'off'
+    preDeployCommand: node dist/src/db/migrate.js
+    healthCheckPath: /health/transport
+    maxShutdownDelaySeconds: 30
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: MCP_API_KEY
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: TELEGRAM_ENABLED
+        sync: false
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        sync: false
+      - key: TELEGRAM_ALLOWED_USER_IDS
+        sync: false
+      - key: GOOGLE_MAPS_ENABLED
+        sync: false
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false

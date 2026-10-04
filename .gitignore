@@ -1,0 +1,30 @@
+# Credentials and environment files (including examples, per publishing policy)
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+secrets.json
+
+# Dependencies and generated output
+node_modules/
+dist/
+coverage/
+artifacts/
+*.tsbuildinfo
+*.log
+
+# OS/editor and local agent/runtime data
+.DS_Store
+._*
+.idea/
+.vscode/
+.runtime/
+.kavia/
+skills/
+__pycache__/
+*.py[cod]
+utils/publish_guard.py

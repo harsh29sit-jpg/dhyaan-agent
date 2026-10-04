@@ -1,0 +1,54 @@
+{
+  "provider": "Gnani",
+  "provenance": {
+    "kind": "official_documentation_example",
+    "source_url": "https://docs.gnani.ai/api/STT/speech-to-text",
+    "retrieved_on": "2026-10-04",
+    "endpoint_version": "v3",
+    "documented_model_family": "Prisma v2.5",
+    "publication_revision": null,
+    "live_verified": false,
+    "sanitization": "No credentials or private audio included; public example identifiers retained."
+  },
+  "request_contract": {
+    "method": "POST",
+    "base_url": "https://api.vachana.ai",
+    "path": "/stt/v3",
+    "content_type": "multipart/form-data",
+    "authentication_header_name": "X-API-Key-ID",
+    "required_fields": ["audio_file", "language_code"],
+    "language_example": "hi-IN",
+    "maximum_duration_seconds": 60,
+    "ideal_maximum_duration_seconds": 30,
+    "documented_formats": ["WAV", "MP3", "OGG", "FLAC", "AAC", "M4A"]
+  },
+  "responses": [
+    {
+      "http_status": 200,
+      "content_type": "application/json",
+      "body": {
+        "success": true,
+        "request_id": "req_abc123",
+        "timestamp": "20251226_143052.123",
+        "transcript": "नमस्ते, आप कैसे हैं?"
+      }
+    },
+    {
+      "http_status": 400,
+      "content_type": "application/json",
+      "body": {
+        "success": false,
+        "error": {
+          "type": "INVALID_REQUEST_ERROR",
+          "message": "Audio duration exceeds maximum limit of 60 seconds, while the ideal duration is 30 seconds."
+        }
+      }
+    }
+  ],
+  "unverified": [
+    "Actual WhatsApp OGG/Opus clip acceptance",
+    "Account authentication, credits and rate limits",
+    "Hindi medicine-name transcription quality",
+    "Confidence and duration fields are absent from documented success example"
+  ]
+}

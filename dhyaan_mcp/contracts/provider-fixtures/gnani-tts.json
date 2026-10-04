@@ -1,0 +1,62 @@
+{
+  "provider": "Gnani",
+  "provenance": {
+    "kind": "official_documentation_example",
+    "source_url": "https://docs.gnani.ai/api/TTS/tts-inference",
+    "retrieved_on": "2026-10-04",
+    "endpoint_version": "v1",
+    "model": "timbre-v2.5",
+    "publication_revision": null,
+    "live_verified": false,
+    "sanitization": "Credential-free public request example; binary success response represented by metadata only."
+  },
+  "request": {
+    "method": "POST",
+    "base_url": "https://api.vachana.ai",
+    "path": "/api/v1/tts/inference",
+    "content_type": "application/json",
+    "authentication_header_name": "X-API-Key-ID",
+    "body": {
+      "text": "नमस्ते, आप कैसे हैं?",
+      "voice": "Nalini",
+      "model": "timbre-v2.5",
+      "language": "hi-IN",
+      "speed": 1.0,
+      "audio_config": {
+        "sample_rate": 48000,
+        "num_channels": 1,
+        "sample_width": 2,
+        "encoding": "linear_pcm",
+        "container": "wav"
+      }
+    }
+  },
+  "success_response_contract": {
+    "http_status": 200,
+    "content_type": "audio/wav",
+    "body_kind": "raw_binary_audio",
+    "body_stored": false
+  },
+  "error_response_example": {
+    "http_status": 400,
+    "content_type": "application/json",
+    "body": {
+      "success": false,
+      "error": {
+        "type": "INVALID_REQUEST_ERROR",
+        "message": "Invalid text or audio configuration."
+      }
+    }
+  },
+  "documented_alternative_output": {
+    "container": "ogg",
+    "content_type": "audio/ogg",
+    "encoding_description": "OGG Opus"
+  },
+  "unverified": [
+    "Prose labels voice and language required while schema/example is less restrictive",
+    "Account authentication and selected voice availability",
+    "End-to-end WhatsApp playback",
+    "Actual content type and audio bytes for configured account"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "status": "provisional",
+  "freeze_gates": ["OPEN-01", "OPEN-02", "OPEN-03"],
+  "source": "Approved PLAN-DHYAAN-MCP-002 revision 1 STEP-01",
+  "schema_source": "src/mcp/schemas.ts",
+  "schema_export_command": "npm run build && npm run catalog",
+  "notes": [
+    "Voice input schemas are breaking changes; connectors require re-registration.",
+    "All revised actions require current run/lease and claimed private-event ownership.",
+    "Telegram, Gnani and Maps require complete configuration plus explicit enable flags.",
+    "Nearby pharmacies are candidates, not stock or fulfillment evidence.",
+    "Refill confirmation records only PENDING_HANDOFF; fulfillment_verified is false.",
+    "Confirmation and owned pending status reads include a MANUAL review packet; operator assignment and dispatch remain unverified. No completion mutation is exposed.",
+    "Provider, persistence and AgenticOrg live verification remain deferred."
+  ],
+  "tools": [
+    "run_acquire", "run_release",
+    "tg_get_new_messages", "tg_ack_messages", "tg_send_text", "tg_send_buttons", "tg_request_location", "tg_send_audio",
+    "voice_transcribe", "voice_synthesize",
+    "pharmacy_nearby_lookup", "refill_request_prepare", "refill_request_confirm", "refill_request_get",
+    "state_read", "state_append", "state_update", "state_log_decision",
+    "gmail_read_inbox", "gmail_search_emails", "gmail_get_message", "gmail_get_thread", "gmail_ack_messages", "gmail_send_email",
+    "razorpay_create_payment_link", "razorpay_get_payment_link", "razorpay_cancel_payment_link", "razorpay_get_payment",
+    "payment_reconcile",
+    "delhivery_pincode_serviceability", "delhivery_create_shipment", "delhivery_track_shipment",
+    "delhivery_shipping_cost", "delhivery_ndr_action", "delhivery_ndr_status",
+    "pharmacy_stock_lookup"
+  ]
+}

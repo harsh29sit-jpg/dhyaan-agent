@@ -1,0 +1,31 @@
+{
+  "provider": "Telegram",
+  "source_url": "https://core.telegram.org/bots/api",
+  "provenance": "Synthetic bounded application fixtures; official page extraction unavailable, public search corroborated method fields.",
+  "live_verified": false,
+  "webhook": {
+    "header": "X-Telegram-Bot-Api-Secret-Token",
+    "example": {
+      "update_id": 2,
+      "message": {
+        "message_id": 3,
+        "date": 1728000000,
+        "from": { "id": 456, "is_bot": false },
+        "chat": { "id": 456, "type": "private" },
+        "location": { "latitude": 12, "longitude": 77 }
+      }
+    }
+  },
+  "methods": {
+    "sendMessage": ["chat_id", "text", "reply_markup"],
+    "sendAudio": ["chat_id", "audio"],
+    "getFile": ["file_id"],
+    "answerCallbackQuery": ["callback_query_id"]
+  },
+  "location_keyboard": {
+    "keyboard": [[{ "text": "Share location for pharmacy lookup", "request_location": true }]],
+    "one_time_keyboard": true,
+    "resize_keyboard": true
+  },
+  "unverified": ["Actual account authentication", "Official contract extraction", "Playback and codec behavior", "Webhook deployment"]
+}

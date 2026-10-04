@@ -1,0 +1,14 @@
+{
+  "source": "PRD (1).md §8.6",
+  "status": "PRD-derived; policy execution remains in the master agent",
+  "ids": [
+    "R-AUTH-01", "R-VOICE-01", "R-ID-01",
+    "R-SAFE-01", "R-SAFE-02", "R-SAFE-03", "R-SAFE-04",
+    "R-POL-01", "R-POL-02", "R-POL-03",
+    "R-HUM-01", "R-HUM-02", "R-HUM-03",
+    "R-LOG-01", "R-LOG-02", "R-LOG-03", "R-LOG-04",
+    "R-PAY-01", "R-PAY-02", "R-PAY-03",
+    "R-REC-01", "R-REC-02", "R-ERR-01",
+    "R-CHAN-01", "R-CHAN-02", "R-INBOX-01", "R-VER-01", "R-LOG-DEC"
+  ]
+}
